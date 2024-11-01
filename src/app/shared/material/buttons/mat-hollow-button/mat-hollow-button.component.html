@@ -1,0 +1,3 @@
+<button mat-stroked-button [disabled]="isDisabled" [color]="color" [matBadge]="badgeValue" [matBadgeColor]="badgeColor" [matTooltip]="tooltip | translate" (click)="buttonClickEmitter()">
+  @if(icon){<mat-icon>{{ icon }}</mat-icon>} {{ label | translate }}
+</button>
