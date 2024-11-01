@@ -7,8 +7,15 @@
     "reset": "Reset",
     "submit": "Submit",
     "yes": "Si",
-    "error": {
-      "required": "Questo campo è obbligatorio"
+    "validation": {
+      "required": "Questo campo è obbligatorio",
+      "minLength": "Troppo breve, lunghezza minima: ",
+      "maxLength": "Troppo lungo, lunghezza massima: ",
+      "minValue": "Valore minimo: ",
+      "maxValue": "Valore massimo: ",
+      "passwordRegex": "Deve contenere almeno un carattere maiuscolo e uno minuscolo, un numero ed un carattere speciale (@$#!%*?&_-)",
+      "matchPassword": "Nuova password e conferma password devono combaciare",
+      "generic": "Campo non valido"
     },
     "language": {
       "changeLanguage": "Cambia lingua",

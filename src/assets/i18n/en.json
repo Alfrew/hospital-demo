@@ -7,8 +7,15 @@
     "reset": "Reset",
     "submit": "Submit",
     "yes": "Yes",
-    "error": {
-      "required": "This field is required"
+    "validation": {
+      "required": "This field is required",
+      "minLength": "Too short, min length: ",
+      "maxLength": "Too long, max length: ",
+      "minValue": "Min value: ",
+      "maxValue": "Max value: ",
+      "passwordRegex": "Must contain at least an uppercase and a lowercase character, a number and a special character (@$#!%*?&_-)",
+      "matchPassword": "New password and confirm password must be the same",
+      "generic": "Invalid field"
     },
     "language": {
       "changeLanguage": "Change language",
