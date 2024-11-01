@@ -89,20 +89,22 @@
         }
       }
 
-      .green-icon {
-        color: $successColor;
-      }
-
-      .red-icon {
-        color: $errorColor;
-      }
-
       .expand-icon {
         cursor: pointer;
         transition: transform 250ms ease-in-out;
         &.active {
           transform: rotate(90deg);
         }
+      }
+
+      &.align-center {
+        text-align: center;
+      }
+      &.align-left {
+        text-align: left;
+      }
+      &.align-right {
+        text-align: right;
       }
     }
   }
