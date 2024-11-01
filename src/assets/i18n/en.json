@@ -1,0 +1,23 @@
+{
+  "common": {
+    "back": "Back",
+    "currency": "$",
+    "next": "Next",
+    "no": "No",
+    "reset": "Reset",
+    "submit": "Submit",
+    "yes": "Yes",
+    "error": {
+      "required": "This field is required"
+    },
+    "language": {
+      "changeLanguage": "Change language",
+      "english": "English",
+      "italian": "Italian"
+    },
+    "select": {
+      "all": "Select All",
+      "clear": "Clear"
+    }
+  }
+}

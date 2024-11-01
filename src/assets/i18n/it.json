@@ -1,0 +1,23 @@
+{
+  "common": {
+    "back": "Indietro",
+    "currency": "€",
+    "next": "Avanti",
+    "no": "No",
+    "reset": "Reset",
+    "submit": "Submit",
+    "yes": "Si",
+    "error": {
+      "required": "Questo campo è obbligatorio"
+    },
+    "language": {
+      "changeLanguage": "Cambia lingua",
+      "english": "Inglese",
+      "italian": "Italiano"
+    },
+    "select": {
+      "all": "Seleziona tutto",
+      "clear": "Clear"
+    }
+  }
+}
