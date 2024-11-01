@@ -1,0 +1,124 @@
+@import "../../../../../assets/styles/variables.scss";
+
+:host {
+  display: block;
+}
+
+.table-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.column-toolbar {
+  display: flex;
+  height: $columnSelectionHeight;
+  justify-content: end;
+  background-color: #ffffff;
+
+  & > .column-select {
+    width: 150px;
+    margin-top: 8px;
+    padding-right: 8px;
+  }
+}
+
+.table-wrapper {
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+  background-color: $tableBackgroundDefaultColor;
+}
+
+::ng-deep .table {
+  width: 100%;
+
+  .table-header-row {
+    height: 40px;
+
+    .table-header {
+      font-weight: bold;
+      font-size: 14px;
+      padding: 0 12px;
+      border-bottom: 2px solid $tableBackgroundDefaultColor;
+      text-align: center;
+
+      .mat-sort-header-container {
+        position: relative;
+        justify-content: center;
+      }
+      .mat-sort-header-arrow {
+        position: absolute;
+        right: -12px;
+      }
+    }
+  }
+
+  .table-row {
+    height: 32px;
+
+    &:nth-child(2n + 1 of tr.table-row) {
+      background-color: $tableOddRowBgColor;
+    } //odd rows with class .table-row
+
+    &:nth-child(2n of tr.table-row) {
+      background-color: $tableEvenRowBgColor;
+    } //even rows with class .table-row
+
+    &:nth-child(n of tr.table-row):hover {
+      background-color: $tableHoverRowBgColor;
+    } //all rows hover with class .table-row
+
+    .table-cell {
+      border-bottom: none;
+      padding: 0 8px;
+
+      .link {
+        color: $linkColor;
+        text-decoration: none;
+      }
+
+      .cta-list {
+        display: flex;
+        justify-content: right;
+        margin-right: 5px;
+        .cta-icon:hover {
+          cursor: pointer;
+          opacity: 0.5;
+        }
+      }
+
+      .green-icon {
+        color: $successColor;
+      }
+
+      .red-icon {
+        color: $errorColor;
+      }
+
+      .expand-icon {
+        cursor: pointer;
+        transition: transform 250ms ease-in-out;
+        &.active {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .sub-table-row {
+    height: 0px;
+
+    .sub-table-container {
+      background-color: $subTableBackgroundDefaultColor;
+      border-bottom: none;
+      padding: 0 48px;
+      overflow: hidden;
+
+      .table {
+        border: 2px solid $tableHoverRowBgColor;
+      }
+    }
+  }
+}

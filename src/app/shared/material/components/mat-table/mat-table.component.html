@@ -1,0 +1,125 @@
+<div class="table-container">
+
+  <div class="table-wrapper">
+    <table class="table" mat-table [dataSource]="dataSource" matSort (matSortChange)="emitSortChange($event)" multiTemplateDataRows>
+      @for(column of tableColumns; track column){
+      <!-- COLUMN -->
+      <ng-container [matColumnDef]="column.columnDef" [sticky]="column.isSticky">
+        <!-- HEADER -->
+        <!-- sortable -->
+        @if (column.isSortable && column.sortProperty) {
+        <th class="table-header" mat-header-cell *matHeaderCellDef [mat-sort-header]="column.sortProperty" sortActionDescription="Sort by {{column.columnDef}}">{{ column.header | translate }}</th>
+        }
+        <!-- unsortable -->
+        @else {
+        @switch (column.type){
+        @case ("expand"||"action") {
+        <th class="table-header" mat-header-cell *matHeaderCellDef></th>
+        }
+        @case ("checkbox") {
+        <th class="table-header" mat-header-cell *matHeaderCellDef>
+          <mat-checkbox *ngIf="column.checkboxAll" (change)="toggleAllRows()" [checked]="isAllSelected() == 0" [indeterminate]="isAllSelected() == 1"></mat-checkbox>
+        </th>
+        }
+        @default {
+        <th class="table-header" mat-header-cell *matHeaderCellDef>{{ column.header | translate }}</th>
+        }
+        }
+        }
+
+        <!-- CELL -->
+        <td class="table-cell" [ngClass]="returnColumnClass(column)" mat-cell *matCellDef="let cell">
+          @switch (column.type){
+          @case ("translate") {
+          {{ getTranslateCellValue(cell, column.columnDef, column.translateRoute??"") | translate}}
+          }
+          @case("date"){
+          {{ getCellValue(cell, column.columnDef) | date:"longDate" }}
+          }
+          @case ("link") {
+          <a class="link" [routerLink]="[column.url]"> {{ getCellValue(cell, column.columnDef) }} </a>
+          }
+          @case ("checkbox"){
+          <mat-checkbox [checked]="cell.checked" (change)="emitCheckBoxAction(cell)" [disabled]="cell.checkDisabled"></mat-checkbox>
+          }
+          @case ("expand") {
+          <mat-icon class="expand-icon" [ngClass]="{'active':currentExpandedElement === cell}">chevron-right</mat-icon>
+          }
+          @case ("action"){
+          <div class="cta-list">
+            @for(action of column.actions; track action){
+            @if(action.visible ? action.visible(cell) : true){
+            <mat-icon class="cta-icon" [matTooltip]="action.tooltip | translate" (click)="emitIconAction(cell, action.actionName); $event.stopPropagation();">{{action.icon}}</mat-icon>
+            }
+            }
+          </div>
+          }
+          @case("custom"){
+          <ng-container [ngTemplateOutlet]="customTemplateRef" [ngTemplateOutletContext]="{$implicit:[cell, column]}"></ng-container>
+          }
+          @default{
+          {{ getCellValue(cell, column.columnDef) }}
+          }
+          }
+      </ng-container>
+      }
+
+      <!-- SUB TABLE -->
+      <ng-container matColumnDef="subTable" *ngIf="subTableColumns.length>0">
+        <td class="sub-table-container" mat-cell *matCellDef="let element" [attr.colspan]="subTableColumns.length">
+          <div [@detailExpand]="element == currentExpandedElement && dataSourceExpandableRow.data.length>0 ? 'expanded' : 'collapsed'">
+            <table class="table" mat-table [dataSource]="dataSourceExpandableRow" multiTemplateDataRows>
+              @for(subColumn of subTableColumns; track subColumn){
+              <!-- COLUMN -->
+              <ng-container [matColumnDef]="subColumn.columnDef">
+                <!-- HEADER -->
+                <th class="table-header" mat-header-cell *matHeaderCellDef>{{ subColumn.header | translate }}</th>
+
+                <!-- CELL -->
+                <td class="table-cell" [ngClass]="returnColumnClass(subColumn)" mat-cell *matCellDef="let cell">
+                  @switch (subColumn.type){
+                  @case ("translate") {
+                  {{ getTranslateCellValue(cell, subColumn.columnDef, subColumn.translateRoute??"") | translate}}
+                  }
+                  @case ("date") {
+                  {{ getCellValue(cell, subColumn.columnDef) | date:"longDate" }}
+                  }
+                  @case ("link"){
+                  <a class="link" [routerLink]="[subColumn.url]"> {{ getCellValue(cell, subColumn.columnDef) }} </a>
+                  }
+                  @case ("action") {
+                  <div class="cta-list">
+                    @for(action of subColumn.actions; track action){
+                    @if(action.visible ? action.visible(cell) : true){
+                    <mat-icon class="cta-icon" [matTooltip]="action.tooltip | translate" (click)="emitIconAction(cell, action.actionName); $event.stopPropagation();">{{action.icon}}</mat-icon>
+                    }
+                    }
+                  </div>
+                  }
+                  @case ("custom") {
+                  <ng-container [ngTemplateOutlet]="customTemplateRef" [ngTemplateOutletContext]="{$implicit:[cell, subColumn]}"></ng-container>
+                  }
+                  @default{
+                  {{ getCellValue(cell, subColumn.columnDef) }}
+                  }
+                  }
+              </ng-container>
+              }
+              <tr class="table-header-row" mat-header-row *matHeaderRowDef="getSubTableColumns(); sticky:true"></tr>
+              <tr class="table-row" mat-row *matRowDef="let row; columns: getSubTableColumns();"></tr>
+            </table>
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- ROWS -->
+      <tr class="table-header-row" mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+      <tr class="table-row" mat-row *matRowDef="let row; columns: displayedColumns" (click)="onRowClick(row)"></tr>
+
+      <ng-container *ngIf="subTableColumns.length>0">
+        <tr class="sub-table-row" mat-row *matRowDef="let row; columns: ['subTable']"></tr>
+      </ng-container>
+    </table>
+  </div>
+
+</div>
