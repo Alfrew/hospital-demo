@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
-import { MenuItem } from "@shared";
 import { RouterOutlet } from "@angular/router";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 
