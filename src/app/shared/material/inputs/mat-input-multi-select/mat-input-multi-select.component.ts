@@ -13,6 +13,13 @@ import { InputSelectOption } from "@shared";
   imports: [CommonModule, ReactiveFormsModule, MatSelectModule, TranslateModule],
   templateUrl: "./mat-input-multi-select.component.html",
   styleUrl: "./mat-input-multi-select.component.scss",
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => MatInputMultiSelectComponent),
+      multi: true,
+    },
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatInputMultiSelectComponent implements OnInit, ControlValueAccessor {
