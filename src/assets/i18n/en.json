@@ -2,6 +2,9 @@
   "common": {
     "back": "Back",
     "currency": "$",
+    "female": "Female",
+    "filters": "Filters",
+    "male": "Male",
     "next": "Next",
     "no": "No",
     "reset": "Reset",

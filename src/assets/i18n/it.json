@@ -2,6 +2,9 @@
   "common": {
     "back": "Indietro",
     "currency": "€",
+    "female": "Donna",
+    "filters": "Filtri",
+    "male": "Uomo",
     "next": "Avanti",
     "no": "No",
     "reset": "Reset",
