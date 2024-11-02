@@ -13,7 +13,7 @@ import { MatHollowButtonComponent } from "@shared";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatPageToolbarComponent {
-  @Input() title: string = "";
+  @Input() pageTitle: string = "";
   @Output() openDialogAction: EventEmitter<void> = new EventEmitter();
 
   public openDialog() {
