@@ -7,4 +7,6 @@ export * from "./models/patients-filters";
 export * from "./models/type-activity";
 export * from "./models/type-intensity";
 
+export * from "./patients-filter-dialog/patients-filter-dialog.component";
+
 export * from "./services/patients.service";

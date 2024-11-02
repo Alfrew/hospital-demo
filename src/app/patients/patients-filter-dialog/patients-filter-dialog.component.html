@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>{{"patients.filters.title" | translate}}</h2>
+<mat-dialog-content>
+
+  <form [formGroup]="filterForm" class="filter-form">
+    <div class="flex-container">
+      <mat-input-number formControlName="minAge" label="patients.filters.minAge"></mat-input-number>
+      <mat-input-number formControlName="maxAge" label="patients.filters.maxAge"></mat-input-number>
+    </div>
+
+    <div class="flex-container">
+      <mat-input-number formControlName="minBmi" label="patients.filters.minBmi"></mat-input-number>
+      <mat-input-number formControlName="maxBmi" label="patients.filters.maxBmi"></mat-input-number>
+    </div>
+
+    <div class="flex-container">
+      <mat-input-number formControlName="minHeightCm" label="patients.filters.minHeightCm"></mat-input-number>
+      <mat-input-number formControlName="maxHeightCm" label="patients.filters.maxHeightCm"></mat-input-number>
+    </div>
+
+    <div class="flex-container">
+      <mat-input-number formControlName="minWeightKg" label="patients.filters.minWeightKg"></mat-input-number>
+      <mat-input-number formControlName="maxWeightKg" label="patients.filters.maxWeightKg"></mat-input-number>
+    </div>
+
+    <mat-input-select formControlName="gender" label="patients.gender" [optionList]="genderSelectList" [hasClearOption]="true"></mat-input-select>
+    <mat-checkbox formControlName="isUnderRecommendedLevelOfActivity">{{"patients.filters.isUnderRecommendedLevelOfActivity" | translate}}</mat-checkbox>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions class="filter-actions">
+  <mat-hollow-button label="common.cancel" mat-dialog-close></mat-hollow-button>
+  <mat-flat-button color="warn" label="common.reset" (buttonClick)="resetFilters()"></mat-flat-button>
+  <mat-flat-button color="primary" label="common.apply" [isDisabled]="filterForm.invalid" (buttonClick)="applyFilters()"></mat-flat-button>
+</mat-dialog-actions>
