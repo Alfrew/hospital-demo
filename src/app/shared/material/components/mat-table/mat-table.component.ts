@@ -33,9 +33,9 @@ export class MatTableComponent {
 
   @Output() iconAction: EventEmitter<{ element: any; action: string }> = new EventEmitter<{ element: any; action: string }>();
   @Output() sortChange: EventEmitter<Sort> = new EventEmitter<Sort>();
-  @Output() checkBoxAction: EventEmitter<{ element: any }> = new EventEmitter();
+  @Output() checkBoxAction: EventEmitter<any> = new EventEmitter();
   @Output() checkBoxAllSelected: EventEmitter<boolean> = new EventEmitter();
-  @Output() expandAction: EventEmitter<{ element: any }> = new EventEmitter();
+  @Output() expandAction: EventEmitter<any> = new EventEmitter();
 
   @ContentChild("custom", { static: false }) customTemplateRef!: TemplateRef<any>;
   @ViewChild(MatSort) sort!: MatSort;
@@ -61,7 +61,7 @@ export class MatTableComponent {
   public onRowClick(element: any) {
     if (this.currentExpandedElement == null || this.currentExpandedElement != element) {
       this.dataSourceExpandableRow.data = [];
-      this.expandAction.emit({ element: element });
+      this.expandAction.emit(element);
     }
     this.currentExpandedElement = this.currentExpandedElement === element ? null : element;
   }

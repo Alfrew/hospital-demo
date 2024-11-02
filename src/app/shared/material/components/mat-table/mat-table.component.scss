@@ -116,7 +116,8 @@
     .sub-table-container {
       background-color: $subTableBackgroundDefaultColor;
       border-bottom: none;
-      padding: 0 48px;
+      padding: 0;
+      padding-left: 72px;
       overflow: hidden;
 
       .table {

@@ -43,7 +43,7 @@
           <mat-checkbox [checked]="cell.checked" (change)="emitCheckBoxAction(cell)" [disabled]="cell.checkDisabled"></mat-checkbox>
           }
           @case ("expand") {
-          <mat-icon class="expand-icon" [ngClass]="{'active':currentExpandedElement === cell}">chevron-right</mat-icon>
+          <mat-icon class="expand-icon" [ngClass]="{'active':currentExpandedElement === cell}">chevron_right</mat-icon>
           }
           @case ("action"){
           <div class="cta-list">
@@ -66,7 +66,7 @@
 
       <!-- SUB TABLE -->
       <ng-container matColumnDef="subTable" *ngIf="subTableColumns.length>0">
-        <td class="sub-table-container" mat-cell *matCellDef="let element" [attr.colspan]="subTableColumns.length">
+        <td class="sub-table-container" mat-cell *matCellDef="let element" [attr.colspan]="tableColumns.length">
           <div [@detailExpand]="element == currentExpandedElement && dataSourceExpandableRow.data.length>0 ? 'expanded' : 'collapsed'">
             <table class="table" mat-table [dataSource]="dataSourceExpandableRow" multiTemplateDataRows>
               @for(subColumn of subTableColumns; track subColumn){
