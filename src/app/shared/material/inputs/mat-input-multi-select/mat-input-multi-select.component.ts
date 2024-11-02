@@ -24,7 +24,6 @@ import { InputSelectOption } from "@shared";
 })
 export class MatInputMultiSelectComponent implements OnInit, ControlValueAccessor {
   @Input() formControlName?: string;
-  @Input() hasClearOption: boolean = false;
   @Input() isMultiple: boolean = false;
   @Input() label: string = "";
   @Input() multipleLimit?: number;

@@ -24,6 +24,7 @@ import { InputSelectOption } from "@shared";
 })
 export class MatInputSelectComponent implements OnInit, ControlValueAccessor {
   @Input() formControlName?: string;
+  @Input() hasClearOption: boolean = false;
   @Input() label: string = "";
   @Input() optionList: InputSelectOption[] = [];
   @Input() placeholder: string = "";
