@@ -1,6 +1,8 @@
 {
   "common": {
+    "apply": "Applica",
     "back": "Indietro",
+    "cancel": "Annulla",
     "currency": "€",
     "female": "Donna",
     "filters": "Filtri",
@@ -28,6 +30,20 @@
     "select": {
       "all": "Seleziona tutto",
       "clear": "Clear"
+    }
+  },
+  "patients": {
+    "filters": {
+      "title": "Filtri pazienti",
+      "minAge": "Età minima",
+      "maxAge": "Età massima",
+      "minBmi": "BMI minima",
+      "maxBmi": "BMI massima",
+      "minHeightCm": "Altezza minima (Cm)",
+      "maxHeightCm": "Altezza massima (Cm)",
+      "minWeightKg": "Peso minimo (Kg)",
+      "maxWeightKg": "Peso massimo (Kg)",
+      "isUnderRecommendedLevelOfActivity": "È sotto il livello consigliato di attività fisica"
     }
   }
 }

@@ -1,6 +1,8 @@
 {
   "common": {
+    "apply": "Apply",
     "back": "Back",
+    "cancel": "Cancel",
     "currency": "$",
     "female": "Female",
     "filters": "Filters",
@@ -28,6 +30,20 @@
     "select": {
       "all": "Select All",
       "clear": "Clear"
+    }
+  },
+  "patients": {
+    "filters": {
+      "title": "Patients filters",
+      "minAge": "Min age",
+      "maxAge": "Max age",
+      "minBmi": "Min BMI",
+      "maxBmi": "Max BMI",
+      "minHeightCm": "Min height (Cm)",
+      "maxHeightCm": "Max height (Cm)",
+      "minWeightKg": "Min weight (Kg)",
+      "maxWeightKg": "Max weight (Kg)",
+      "isUnderRecommendedLevelOfActivity": "Is Under Recommended Level Of Activity"
     }
   }
 }
