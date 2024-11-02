@@ -1,0 +1,551 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "Gregor van Vloten",
+      "gender": "male",
+      "birthDate": "1986-05-09",
+      "heightCm": 193,
+      "weightKg": 69.6,
+      "bmi": 18.6
+    },
+    {
+      "id": 2,
+      "name": "Susanne Marcil",
+      "gender": "female",
+      "birthDate": "1984-11-18",
+      "heightCm": 159,
+      "weightKg": 102.8,
+      "bmi": 40.6
+    },
+    {
+      "id": 3,
+      "name": "Söröss Madarász",
+      "gender": "female",
+      "birthDate": "1979-07-28",
+      "heightCm": 156,
+      "weightKg": 47.5,
+      "bmi": 19.5
+    },
+    {
+      "id": 4,
+      "name": "Martin Eriksen",
+      "gender": "male",
+      "birthDate": "1978-11-09",
+      "heightCm": 182,
+      "weightKg": 163.5,
+      "bmi": 49.3
+    },
+    {
+      "id": 5,
+      "name": "Jennifer Dixon",
+      "gender": "female",
+      "birthDate": "1987-12-13",
+      "heightCm": 159,
+      "weightKg": 64,
+      "bmi": 25.3
+    },
+    {
+      "id": 6,
+      "name": "Matthew Thornton",
+      "gender": "male",
+      "birthDate": "1988-06-17",
+      "heightCm": 177,
+      "weightKg": 83.3,
+      "bmi": 26.5
+    },
+    {
+      "id": 7,
+      "name": "Tom Brady",
+      "gender": "male",
+      "birthDate": "1992-03-22",
+      "heightCm": 179,
+      "weightKg": 85.2,
+      "bmi": 26.5
+    },
+    {
+      "id": 8,
+      "name": "Harrison Abbott",
+      "gender": "male",
+      "birthDate": "1993-10-27",
+      "heightCm": 172,
+      "weightKg": 80,
+      "bmi": 27
+    },
+    {
+      "id": 9,
+      "name": "Mollie Jordan",
+      "gender": "female",
+      "birthDate": "1980-02-15",
+      "heightCm": 175,
+      "weightKg": 61.2,
+      "bmi": 19.9
+    },
+    {
+      "id": 10,
+      "name": "Toby Simpson",
+      "gender": "male",
+      "birthDate": "1988-01-08",
+      "heightCm": 168,
+      "weightKg": 62,
+      "bmi": 21.9
+    },
+    {
+      "id": 11,
+      "name": "Katherine Wyatt",
+      "gender": "female",
+      "birthDate": "1976-08-02",
+      "heightCm": 169,
+      "weightKg": 56.3,
+      "bmi": 19.7
+    },
+    {
+      "id": 12,
+      "name": "Shannon Foster",
+      "gender": "female",
+      "birthDate": "1986-08-21",
+      "heightCm": 171,
+      "weightKg": 62.4,
+      "bmi": 21.3
+    }
+  ],
+  "activities": [
+    {
+      "activity": "sleeping",
+      "intensity": "none"
+    },
+    {
+      "activity": "stationary-awake",
+      "intensity": "low"
+    },
+    {
+      "activity": "walking",
+      "intensity": "moderate"
+    },
+    {
+      "activity": "cycling",
+      "intensity": "moderate"
+    },
+    {
+      "activity": "swimming",
+      "intensity": "vigorous"
+    },
+    {
+      "activity": "running",
+      "intensity": "vigorous"
+    }
+  ],
+  "patientsActivities": [
+    {
+      "patientId": 1,
+      "activity": "sleeping",
+      "minutes": 540
+    },
+    {
+      "patientId": 1,
+      "activity": "walking",
+      "minutes": 75
+    },
+    {
+      "patientId": 1,
+      "activity": "stationary-awake",
+      "minutes": 765
+    },
+    {
+      "patientId": 1,
+      "activity": "swimming",
+      "minutes": 60
+    },
+    {
+      "patientId": 2,
+      "activity": "sleeping",
+      "minutes": 450
+    },
+    {
+      "patientId": 2,
+      "activity": "walking",
+      "minutes": 20
+    },
+    {
+      "patientId": 2,
+      "activity": "stationary-awake",
+      "minutes": 970
+    },
+    {
+      "patientId": 3,
+      "activity": "sleeping",
+      "minutes": 585
+    },
+    {
+      "patientId": 3,
+      "activity": "stationary-awake",
+      "minutes": 755
+    },
+    {
+      "patientId": 3,
+      "activity": "running",
+      "minutes": 30
+    },
+    {
+      "patientId": 3,
+      "activity": "cycling",
+      "minutes": 75
+    },
+    {
+      "patientId": 4,
+      "activity": "sleeping",
+      "minutes": 720
+    },
+    {
+      "patientId": 4,
+      "activity": "stationary-awake",
+      "minutes": 710
+    },
+    {
+      "patientId": 4,
+      "activity": "walking",
+      "minutes": 10
+    },
+    {
+      "patientId": 5,
+      "activity": "sleeping",
+      "minutes": 570
+    },
+    {
+      "patientId": 5,
+      "activity": "walking",
+      "minutes": 145
+    },
+    {
+      "patientId": 5,
+      "activity": "stationary-awake",
+      "minutes": 725
+    },
+    {
+      "patientId": 6,
+      "activity": "sleeping",
+      "minutes": 480
+    },
+    {
+      "patientId": 6,
+      "activity": "walking",
+      "minutes": 30
+    },
+    {
+      "patientId": 6,
+      "activity": "stationary-awake",
+      "minutes": 900
+    },
+    {
+      "patientId": 6,
+      "activity": "cycling",
+      "minutes": 30
+    },
+    {
+      "patientId": 7,
+      "activity": "sleeping",
+      "minutes": 540
+    },
+    {
+      "patientId": 7,
+      "activity": "walking",
+      "minutes": 180
+    },
+    {
+      "patientId": 7,
+      "activity": "stationary-awake",
+      "minutes": 720
+    },
+    {
+      "patientId": 8,
+      "activity": "sleeping",
+      "minutes": 1000
+    },
+    {
+      "patientId": 8,
+      "activity": "stationary-awake",
+      "minutes": 440
+    },
+    {
+      "patientId": 9,
+      "activity": "sleeping",
+      "minutes": 540
+    },
+    {
+      "patientId": 9,
+      "activity": "walking",
+      "minutes": 60
+    },
+    {
+      "patientId": 9,
+      "activity": "stationary-awake",
+      "minutes": 770
+    },
+    {
+      "patientId": 9,
+      "activity": "running",
+      "minutes": 45
+    },
+    {
+      "patientId": 9,
+      "activity": "swimming",
+      "minutes": 45
+    },
+    {
+      "patientId": 10,
+      "activity": "sleeping",
+      "minutes": 540
+    },
+    {
+      "patientId": 10,
+      "activity": "walking",
+      "minutes": 120
+    },
+    {
+      "patientId": 10,
+      "activity": "stationary-awake",
+      "minutes": 780
+    },
+    {
+      "patientId": 11,
+      "activity": "sleeping",
+      "minutes": 600
+    },
+    {
+      "patientId": 11,
+      "activity": "walking",
+      "minutes": 30
+    },
+    {
+      "patientId": 11,
+      "activity": "stationary-awake",
+      "minutes": 630
+    },
+    {
+      "patientId": 11,
+      "activity": "swimming",
+      "minutes": 60
+    },
+    {
+      "patientId": 11,
+      "activity": "running",
+      "minutes": 60
+    },
+    {
+      "patientId": 11,
+      "activity": "cycling",
+      "minutes": 60
+    },
+    {
+      "patientId": 12,
+      "activity": "sleeping",
+      "minutes": 420
+    },
+    {
+      "patientId": 12,
+      "activity": "walking",
+      "minutes": 120
+    },
+    {
+      "patientId": 12,
+      "activity": "stationary-awake",
+      "minutes": 900
+    }
+  ],
+  "1": [
+    {
+      "activity": "sleeping",
+      "minutes": 540
+    },
+    {
+      "activity": "walking",
+      "minutes": 75
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 765
+    },
+    {
+      "activity": "swimming",
+      "minutes": 60
+    }
+  ],
+  "2": [
+    {
+      "activity": "sleeping",
+      "minutes": 450
+    },
+    {
+      "activity": "walking",
+      "minutes": 20
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 970
+    }
+  ],
+  "3": [
+    {
+      "activity": "sleeping",
+      "minutes": 585
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 755
+    },
+    {
+      "activity": "running",
+      "minutes": 30
+    },
+    {
+      "activity": "cycling",
+      "minutes": 75
+    }
+  ],
+  "4": [
+    {
+      "activity": "sleeping",
+      "minutes": 720
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 710
+    },
+    {
+      "activity": "walking",
+      "minutes": 10
+    }
+  ],
+  "5": [
+    {
+      "activity": "sleeping",
+      "minutes": 570
+    },
+    {
+      "activity": "walking",
+      "minutes": 145
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 725
+    }
+  ],
+  "6": [
+    {
+      "activity": "sleeping",
+      "minutes": 480
+    },
+    {
+      "activity": "walking",
+      "minutes": 30
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 900
+    },
+    {
+      "activity": "cycling",
+      "minutes": 30
+    }
+  ],
+  "7": [
+    {
+      "activity": "sleeping",
+      "minutes": 540
+    },
+    {
+      "activity": "walking",
+      "minutes": 180
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 720
+    }
+  ],
+  "8": [
+    {
+      "activity": "sleeping",
+      "minutes": 1000
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 440
+    }
+  ],
+  "9": [
+    {
+      "activity": "sleeping",
+      "minutes": 540
+    },
+    {
+      "activity": "walking",
+      "minutes": 60
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 770
+    },
+    {
+      "activity": "running",
+      "minutes": 45
+    },
+    {
+      "activity": "swimming",
+      "minutes": 45
+    }
+  ],
+  "10": [
+    {
+      "activity": "sleeping",
+      "minutes": 540
+    },
+    {
+      "activity": "walking",
+      "minutes": 120
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 780
+    }
+  ],
+  "11": [
+    {
+      "activity": "sleeping",
+      "minutes": 600
+    },
+    {
+      "activity": "walking",
+      "minutes": 30
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 630
+    },
+    {
+      "activity": "swimming",
+      "minutes": 60
+    },
+    {
+      "activity": "running",
+      "minutes": 60
+    },
+    {
+      "activity": "cycling",
+      "minutes": 60
+    }
+  ],
+  "12": [
+    {
+      "activity": "sleeping",
+      "minutes": 420
+    },
+    {
+      "activity": "walking",
+      "minutes": 120
+    },
+    {
+      "activity": "stationary-awake",
+      "minutes": 900
+    }
+  ]
+}
