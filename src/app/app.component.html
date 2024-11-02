@@ -3,6 +3,7 @@
     <h1 class="title">Hospital app</h1>
   </header>
   <div class="content-wrap">
+    @if(isSpinnerVisible){<mat-loader></mat-loader>}
     <router-outlet></router-outlet>
   </div>
   <footer class="footer">
