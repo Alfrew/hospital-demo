@@ -1,7 +1,6 @@
 export * from "./material/buttons/mat-flat-button/mat-flat-button.component";
 export * from "./material/buttons/mat-hollow-button/mat-hollow-button.component";
 
-export * from "./material/components/mat-loader/mat-loader.component";
 export * from "./material/components/mat-page-toolbar/mat-page-toolbar.component";
 export * from "./material/components/mat-table/mat-table.component";
 
