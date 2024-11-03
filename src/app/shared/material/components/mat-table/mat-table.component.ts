@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component, ContentChild, EventEmitter, Input, Output, TemplateRef, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, EventEmitter, Input, OnChanges, Output, TemplateRef, ViewChild } from "@angular/core";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSort, MatSortModule, Sort } from "@angular/material/sort";
@@ -25,7 +25,7 @@ import { Column } from "src/app/shared/utils/table-utils";
     ]),
   ],
 })
-export class MatTableComponent {
+export class MatTableComponent implements OnChanges, AfterViewInit {
   @Input() tableColumns: Column[] = [];
   @Input() subTableColumns: Column[] = [];
   @Input() tableData: any[] = [];
@@ -47,7 +47,7 @@ export class MatTableComponent {
 
   constructor() {}
 
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
     this.dataSource.sortingDataAccessor = (item, property) => this.getCellValue(item, property);
     this.dataSource.sort = this.sort;
   }
