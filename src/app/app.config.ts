@@ -6,6 +6,7 @@ import { routes } from "./app.routes";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { HttpLoaderFactory, HttpLocalLoaderFactory } from "@core";
 import { HttpClient, provideHttpClient } from "@angular/common/http";
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig } from "@angular/material/dialog";
 
 export const provideTranslation = () => ({
   loader: {
@@ -22,5 +23,13 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(),
     importProvidersFrom([TranslateModule.forRoot(provideTranslation())]),
+    {
+      provide: MAT_DIALOG_DEFAULT_OPTIONS,
+      useValue: {
+        ...new MatDialogConfig(),
+        disableClose: true,
+        minWidth: "50vw",
+      } as MatDialogConfig,
+    },
   ],
 };

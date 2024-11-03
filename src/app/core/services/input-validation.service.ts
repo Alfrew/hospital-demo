@@ -27,6 +27,24 @@ export class InputValidationService {
     };
   }
 
+  public maxMoreThanMinValidator(minControlName: string, maxControlName: string): ValidatorFn {
+    return (abstractControl: AbstractControl) => {
+      const minControl = abstractControl.get(minControlName);
+      const maxControl = abstractControl.get(maxControlName);
+      if (maxControl!.errors && !maxControl!.errors["maxMoreThanMinValidator"]) {
+        return null;
+      }
+      if (minControl!.value > maxControl!.value) {
+        const error = { maxMoreThanMinValidator: true };
+        maxControl!.setErrors(error);
+        return error;
+      } else {
+        maxControl!.setErrors(null);
+        return null;
+      }
+    };
+  }
+
   public getValidationMessage(formControl: FormControl): string {
     switch (true) {
       case !formControl.errors:
@@ -52,6 +70,9 @@ export class InputValidationService {
 
       case formControl.hasError("matchValidator"):
         return this.translateService.instant("common.validation.matchPassword");
+
+      case formControl.hasError("maxMoreThanMinValidator"):
+        return this.translateService.instant("common.validation.maxMoreThanMinValidator");
 
       default:
         console.error("New validation message is required, check inside input-validation.service.ts");

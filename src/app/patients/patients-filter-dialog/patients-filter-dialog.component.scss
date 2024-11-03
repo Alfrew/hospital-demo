@@ -9,6 +9,10 @@
 .flex-container {
   display: flex;
   gap: 12px;
+
+  & > * {
+    flex: 1;
+  }
 }
 
 .filter-actions {

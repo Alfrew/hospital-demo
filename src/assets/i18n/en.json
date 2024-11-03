@@ -13,14 +13,15 @@
     "submit": "Submit",
     "yes": "Yes",
     "validation": {
-      "required": "This field is required",
-      "minLength": "Too short, min length: ",
-      "maxLength": "Too long, max length: ",
-      "minValue": "Min value: ",
-      "maxValue": "Max value: ",
-      "passwordRegex": "Must contain at least an uppercase and a lowercase character, a number and a special character (@$#!%*?&_-)",
+      "generic": "Invalid field",
       "matchPassword": "New password and confirm password must be the same",
-      "generic": "Invalid field"
+      "maxLength": "Too long, max length: ",
+      "maxMoreThanMinValidator": "Max value must be greater than min value",
+      "maxValue": "Max value: ",
+      "minLength": "Too short, min length: ",
+      "minValue": "Min value: ",
+      "passwordRegex": "Must contain at least an uppercase and a lowercase character, a number and a special character (@$#!%*?&_-)",
+      "required": "This field is required"
     },
     "language": {
       "changeLanguage": "Change language",

@@ -1,11 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component, Inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Inject, OnInit } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { InputSelectOption, MatFlatButtonComponent, MatHollowButtonComponent, MatInputNumberComponent, MatInputSelectComponent } from "@shared";
 import { PatientsFilters } from "@patients";
 import { TranslateModule } from "@ngx-translate/core";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { InputValidationService } from "@core";
 
 @Component({
   selector: "patients-filter-dialog",
@@ -25,27 +26,48 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
   styleUrl: "./patients-filter-dialog.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PatientsFilterDialogComponent {
+export class PatientsFilterDialogComponent implements OnInit {
   genderSelectList: InputSelectOption[] = [
     { value: "male", viewValue: "common.male" },
     { value: "female", viewValue: "common.female" },
   ];
 
-  filterForm: FormGroup = new FormGroup({
-    gender: new FormControl(null),
-    isUnderRecommendedLevelOfActivity: new FormControl(false),
-    minAge: new FormControl(null, [Validators.min(0), Validators.max(130)]),
-    maxAge: new FormControl(null, [Validators.min(0), Validators.max(130)]),
-    minBmi: new FormControl(null, [Validators.min(0), Validators.max(100)]),
-    maxBmi: new FormControl(null, [Validators.min(0), Validators.max(100)]),
-    minHeightCm: new FormControl(null, [Validators.min(0), Validators.max(250)]),
-    maxHeightCm: new FormControl(null, [Validators.min(0), Validators.max(250)]),
-    minWeightKg: new FormControl(null, [Validators.min(0), Validators.max(300)]),
-    maxWeightKg: new FormControl(null, [Validators.min(0), Validators.max(300)]),
-  });
+  constructor(
+    private dialogRef: MatDialogRef<PatientsFilterDialogComponent>,
+    private inputValidationService: InputValidationService,
+    @Inject(MAT_DIALOG_DATA) private patientsFilters: PatientsFilters
+  ) {}
 
-  constructor(private dialogRef: MatDialogRef<PatientsFilterDialogComponent>, @Inject(MAT_DIALOG_DATA) private patientsFilters: PatientsFilters) {
+  filterForm!: FormGroup;
+
+  ngOnInit(): void {
+    this.createForm();
     this.updateFilterFormValues();
+  }
+
+  private createForm() {
+    this.filterForm = new FormGroup(
+      {
+        gender: new FormControl(null),
+        isUnderRecommendedLevelOfActivity: new FormControl(false),
+        minAge: new FormControl(null, [Validators.min(0), Validators.max(130)]),
+        maxAge: new FormControl(null, [Validators.min(0), Validators.max(130)]),
+        minBmi: new FormControl(null, [Validators.min(0), Validators.max(100)]),
+        maxBmi: new FormControl(null, [Validators.min(0), Validators.max(100)]),
+        minHeightCm: new FormControl(null, [Validators.min(0), Validators.max(250)]),
+        maxHeightCm: new FormControl(null, [Validators.min(0), Validators.max(250)]),
+        minWeightKg: new FormControl(null, [Validators.min(0), Validators.max(300)]),
+        maxWeightKg: new FormControl(null, [Validators.min(0), Validators.max(300)]),
+      },
+      {
+        validators: [
+          this.inputValidationService.maxMoreThanMinValidator("minAge", "maxAge"),
+          this.inputValidationService.maxMoreThanMinValidator("minBmi", "maxBmi"),
+          this.inputValidationService.maxMoreThanMinValidator("minHeightCm", "maxHeightCm"),
+          this.inputValidationService.maxMoreThanMinValidator("minWeightKg", "maxWeightKg"),
+        ],
+      }
+    );
   }
 
   private updateFilterFormValues() {

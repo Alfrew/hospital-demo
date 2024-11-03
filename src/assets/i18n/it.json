@@ -14,13 +14,14 @@
     "yes": "Si",
     "validation": {
       "required": "Questo campo è obbligatorio",
-      "minLength": "Troppo breve, lunghezza minima: ",
-      "maxLength": "Troppo lungo, lunghezza massima: ",
-      "minValue": "Valore minimo: ",
-      "maxValue": "Valore massimo: ",
-      "passwordRegex": "Deve contenere almeno un carattere maiuscolo e uno minuscolo, un numero ed un carattere speciale (@$#!%*?&_-)",
+      "generic": "Campo non valido",
       "matchPassword": "Nuova password e conferma password devono combaciare",
-      "generic": "Campo non valido"
+      "maxLength": "Troppo lungo, lunghezza massima: ",
+      "maxMoreThanMinValidator": "Il valore massimo deve essere maggiore rispetto il valore minimo",
+      "maxValue": "Valore massimo: ",
+      "minLength": "Troppo breve, lunghezza minima: ",
+      "minValue": "Valore minimo: ",
+      "passwordRegex": "Deve contenere almeno un carattere maiuscolo e uno minuscolo, un numero ed un carattere speciale (@$#!%*?&_-)"
     },
     "language": {
       "changeLanguage": "Cambia lingua",
