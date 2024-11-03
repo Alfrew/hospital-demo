@@ -57,8 +57,10 @@ export class PatientsTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((newFilters) => {
-      this.currentFilters = newFilters;
-      this.getPatients();
+      if (newFilters) {
+        this.currentFilters = newFilters;
+        this.getPatients();
+      }
     });
   }
 }
