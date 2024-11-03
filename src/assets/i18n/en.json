@@ -34,6 +34,31 @@
     }
   },
   "patients": {
+    "activity": "Activity",
+    "activityIntensity": "Intensity",
+    "activityMinutes": "Duration (minutes)",
+    "age": "Age",
+    "birthDate": "Birth Date",
+    "bmi": "BMI",
+    "gender": "Gender",
+    "heightCm": "Height (Cm)",
+    "name": "Name",
+    "title": "Patients",
+    "weightKg": "Weight (Kg)",
+    "activities": {
+      "sleeping": "Sleeping",
+      "stationary-awake": "Stationary awake",
+      "walking": "Walking",
+      "cycling": "Cycling",
+      "swimming": "Swimming",
+      "running": "Running"
+    },
+    "intensities": {
+      "none": "None",
+      "low": "Low",
+      "moderate": "Moderate",
+      "vigorous": "Vigorous"
+    },
     "filters": {
       "title": "Patients filters",
       "minAge": "Min age",

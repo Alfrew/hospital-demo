@@ -1,0 +1,2 @@
+<mat-page-toolbar pageTitle="patients.title" (openDialogAction)="openFilters()"></mat-page-toolbar>
+<mat-table [tableColumns]="patientsTableColumns" [tableData]="patientsTableData" [subTableColumns]="patientsSubTableColumns" [subTableData]="patientsSubTableData" (expandAction)="expandSubTable($event)"></mat-table>
