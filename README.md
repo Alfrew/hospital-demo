@@ -22,4 +22,4 @@ The main page, patients-table-component, show the patient data in a table where 
 
 In future is possible to upgrade the app by adding a form to add patients, their activities, more filters (for example filtering the activities type), a patient page with all his information and maype some charts about the activities, an admin section where is possible to manage the activities type by adding more them or changing their associated intensity and so on...
 
-I've also prepared the whole app for a internationalization of the app using the ngx-translate library, so it can be easily translated in more language by json based key-value system.
+I've also prepared the whole app for a future internationalization using the ngx-translate library, so it can be easily translated in more language by a json based key-value system.
