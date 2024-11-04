@@ -20,6 +20,6 @@ To manage the data I've created the patients service and structured it like a "b
 
 The main page, patients-table-component, show the patient data in a table where is possible to filter and sort all the patients, other than see in a sub-table the activities for each person by clicking on its corresponding row.
 
-In future is possible to upgrade the app by adding a form to add patients, their activities, more filters (for example filtering the activities type), a patient page with all his information and maype some charts about the activities, an admin section where is possible to manage the activities type by adding more them or changing their associated intensity and so on...
+In future is possible to upgrade the app by adding a form to add patients, their activities, more filters (for example filtering the activities type), a patient page with all his information and maype some charts about the activities, an admin section where is possible to manage the activities type by adding more of them or changing their associated intensity and so on...
 
 I've also prepared the whole app for a future internationalization using the ngx-translate library, so it can be easily translated in more language by a json based key-value system.
